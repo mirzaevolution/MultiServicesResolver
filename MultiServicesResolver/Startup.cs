@@ -32,6 +32,9 @@ namespace MultiServicesResolver
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+            //karena sample ini gak konek ke db, maka saya memakai AddTransient.
+            //apabila konek ke db or external service bisa memakai AddScoped
+
             services.AddTransient<WelcomeServiceID>();
             services.AddTransient<WelcomeServiceUS>();
 
