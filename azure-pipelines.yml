@@ -34,3 +34,15 @@ steps:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'drop'
     publishLocation: 'Container'
+
+- task: AzureRmWebAppDeployment@4
+  inputs:
+    ConnectionType: 'AzureRM'
+    azureSubscription: 'Visual Studio Enterprise Subscription(e7359337-74f1-4ad3-91b2-302f52f2d6a8)'
+    appType: 'webApp'
+    WebAppName: 'multiserviceresolver'
+    packageForLinux: '$(Build.ArtifactStagingDirectory)/drop.zip'
+    AppSettings: '-Author "Mirza Ghulam Rasyid"'
+    enableCustomDeployment: true
+    DeploymentType: 'webDeploy'
+    TakeAppOfflineFlag: false
