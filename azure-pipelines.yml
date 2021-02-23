@@ -32,15 +32,6 @@ steps:
     publishWebProjects: true
     arguments: '--configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)'
     
-- task: ArchiveFiles@2
-  name: 'ArchiveFile'
-  inputs:
-    rootFolderOrFile: '$(Build.ArtifactStagingDirectory)'
-    includeRootFolder: false
-    archiveType: 'zip'
-    archiveFile: '$(Build.ArtifactStagingDirectory)/drop.zip'
-    replaceExistingArchive: true
-
 - task: AzureRmWebAppDeployment@4
   name: 'AppServiceDeploy'
   inputs:
