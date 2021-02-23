@@ -48,8 +48,8 @@ steps:
     azureSubscription: 'Visual Studio Enterprise Subscription(e7359337-74f1-4ad3-91b2-302f52f2d6a8)'
     appType: 'webApp'
     WebAppName: 'multiserviceresolver'
-    packageForLinux: '$(Build.ArtifactStagingDirectory)/drop.zip'
+    packageForLinux: '$(Build.ArtifactStagingDirectory)/*.zip'
     AppSettings: '-Author "Mirza Ghulam Rasyid"'
     enableCustomDeployment: true
-    DeploymentType: 'webDeploy'
+    DeploymentType: 'zipDeploy'
     TakeAppOfflineFlag: false
